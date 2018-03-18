@@ -68,18 +68,13 @@ type
   end;
 
   TFSCConsultaCNPJ = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
     IdHTTP: TIdHTTP;
-    Button3: TButton;
     IdCookieManager: TIdCookieManager;
     TimerInicializar: TTimer;
     TimerExibirWebBrowser: TTimer;
     panelStatus: TPanel;
     panelWebBrowser: TPanel;
     WebBrowser: TWebBrowser;
-    procedure Button2Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
     procedure TimerInicializarTimer(Sender: TObject);
     procedure TimerExibirWebBrowserTimer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -104,51 +99,6 @@ implementation
 
 uses ACBrUtil;
 
-
-procedure TFSCConsultaCNPJ.Button2Click(Sender: TObject);
-var
-  Elem: IHTMLElement;
-  lCookie,
-  Post: TStringList;
-  retorno : String;
-  URI: TIdURI;
-begin
-  Elem := GetElementById(WebBrowser.Document, 'g-recaptcha-response') as IHTMLElement;
-  if not Assigned(Elem) then
-    Exit;
-  ShowMessage(
-    'Tag name = <' + Elem.tagName + '>'#10 +
-    'Tag id = ' + Elem.id + #10 +
-    'Tag innerHTML = "' + Elem.innerHTML + '"'
-  );
-
-  lCookie := getCookies;
-  URI := TIdURI.Create('http://www.receita.fazenda.gov.br/');
-  IdCookieManager.AddServerCookie(lCookie.Text,URI);
-
-  Post:= TStringList.Create();
-  Post.Add('origem=comprovante&');
-  Post.Add('cnpj='+FCNPJ+'&');
-  Post.Add('g-recaptcha-response='+Trim(Elem.innerHTML)+'&');
-  Post.Add('submit1=Consultar&');
-  Post.Add('search_type=cnpj');
-
-  retorno := IdHTTP.Post('http://www.receita.fazenda.gov.br/PessoaJuridica/CNPJ/cnpjreva/valida_recaptcha.asp',
-                          post);
-  Showmessage(retorno);
-
-end;
-
-procedure TFSCConsultaCNPJ.Button3Click(Sender: TObject);
-var
-  Elem: IHTMLElement;
-begin
-  Elem := GetElementById(WebBrowser.Document, 'principal') as IHTMLElement;
-  if not Assigned(Elem) then
-    Exit;
-  ShowMessage( Elem.innerHTML );
-end;
-
 procedure TFSCConsultaCNPJ.FormCreate(Sender: TObject);
 begin
   FTentativas                  := 0;
@@ -162,27 +112,21 @@ end;
 
 function TFSCConsultaCNPJ.GetElementById(const Doc: IDispatch; const Id: string): IDispatch;
 var
-  Document: IHTMLDocument2;     // IHTMLDocument2 interface of Doc
-  Body: IHTMLElement2;          // document body element
-  Tags: IHTMLElementCollection; // all tags in document body
-  Tag: IHTMLElement;            // a tag in document body
-  I: Integer;                   // loops thru tags in document body
+  Document: IHTMLDocument2;
+  Body: IHTMLElement2;
+  Tags: IHTMLElementCollection;
+  Tag: IHTMLElement;
+  I: Integer;
 begin
   Result := nil;
-  // Check for valid document: require IHTMLDocument2 interface to it
   if not Supports(Doc, IHTMLDocument2, Document) then
-    raise Exception.Create('Invalid HTML document');
-  // Check for valid body element: require IHTMLElement2 interface to it
+    raise Exception.Create('Documento HTML inválido');
   if not Supports(Document.body, IHTMLElement2, Body) then
-    raise Exception.Create('Can''t find <body> element');
-  // Get all tags in body element ('*' => any tag name)
+    raise Exception.Create('BODY não encontrado');
   Tags := Body.getElementsByTagName('*');
-  // Scan through all tags in body
   for I := 0 to Pred(Tags.length) do
   begin
-    // Get reference to a tag
     Tag := Tags.item(I, EmptyParam) as IHTMLElement;
-    // Check tag's id and return it if id matches
     if AnsiSameText(Tag.id, Id) then
     begin
       Result := Tag;

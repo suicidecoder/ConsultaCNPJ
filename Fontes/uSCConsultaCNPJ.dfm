@@ -17,32 +17,6 @@ object FSCConsultaCNPJ: TFSCConsultaCNPJ
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object Button1: TButton
-    Left = 24
-    Top = 24
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
-    TabOrder = 0
-  end
-  object Button2: TButton
-    Left = 105
-    Top = 24
-    Width = 75
-    Height = 25
-    Caption = 'Button2'
-    TabOrder = 1
-    OnClick = Button2Click
-  end
-  object Button3: TButton
-    Left = 186
-    Top = 24
-    Width = 75
-    Height = 25
-    Caption = 'Button3'
-    TabOrder = 2
-    OnClick = Button3Click
-  end
   object panelStatus: TPanel
     Left = 0
     Top = 0
@@ -57,7 +31,7 @@ object FSCConsultaCNPJ: TFSCConsultaCNPJ
     Font.Name = 'Verdana'
     Font.Style = []
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 0
   end
   object panelWebBrowser: TPanel
     Left = 186
@@ -66,7 +40,7 @@ object FSCConsultaCNPJ: TFSCConsultaCNPJ
     Height = 0
     BevelOuter = bvNone
     Caption = 'panelWebBrowser'
-    TabOrder = 4
+    TabOrder = 1
     object WebBrowser: TWebBrowser
       Left = 0
       Top = 0
