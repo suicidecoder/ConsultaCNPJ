@@ -60,31 +60,6 @@ object FSCConsultaCNPJ: TFSCConsultaCNPJ
         00000000000000000100000000000000000000000000000000000000}
     end
   end
-  object IdHTTP: TIdHTTP
-    AllowCookies = True
-    HandleRedirects = True
-    ProxyParams.BasicAuthentication = False
-    ProxyParams.ProxyPort = 0
-    Request.ContentLength = -1
-    Request.ContentRangeEnd = -1
-    Request.ContentRangeStart = -1
-    Request.ContentRangeInstanceLength = -1
-    Request.Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-    Request.BasicAuthentication = False
-    Request.UserAgent = 
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/2010010' +
-      '1 Firefox/59.0'
-    Request.Ranges.Units = 'bytes'
-    Request.Ranges = <>
-    HTTPOptions = [hoForceEncodeParams]
-    CookieManager = IdCookieManager
-    Left = 304
-    Top = 208
-  end
-  object IdCookieManager: TIdCookieManager
-    Left = 384
-    Top = 208
-  end
   object TimerInicializar: TTimer
     Enabled = False
     Interval = 500

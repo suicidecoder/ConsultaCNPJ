@@ -35,9 +35,9 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.OleCtrls, SHDocVw_TLB, MSHTML,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.OleCtrls, MSHTML,
   IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient, IdHTTP,
-  IdCookieManager, IdURI, Vcl.ExtCtrls;
+  IdCookieManager, IdURI, Vcl.ExtCtrls, SHDocVw;
 
 type
   TFSCConsultaCNPJResposta = record
@@ -68,8 +68,6 @@ type
   end;
 
   TFSCConsultaCNPJ = class(TForm)
-    IdHTTP: TIdHTTP;
-    IdCookieManager: TIdCookieManager;
     TimerInicializar: TTimer;
     TimerExibirWebBrowser: TTimer;
     panelStatus: TPanel;
@@ -86,7 +84,6 @@ type
     FCNPJ : string;
 
     function GetElementById(const Doc: IDispatch; const Id: string): IDispatch;
-    function getCookies : TStringList;
     function LerCampo(Texto: TStringList; NomeCampo: String): String;
     procedure TratarRetorno(aRetorno : string);
   public
@@ -195,20 +192,6 @@ begin
     end;
   end;
   ModalResult := mrOk;
-end;
-
-function TFSCConsultaCNPJ.getCookies : TStringList;
-var
-  Document: IHTMLDocument2;
-  Body: IHTMLElement2;
-begin
-  Result := nil;
-  if not Supports(WebBrowser.Document, IHTMLDocument2, Document) then
-    raise Exception.Create('HTML invalido');
-  if not Supports(Document.body, IHTMLElement2, Body) then
-    raise Exception.Create('Documento sem BODY');
-  result := TStringList.Create;
-  result.Text := Document.cookie;
 end;
 
 procedure TFSCConsultaCNPJ.TratarRetorno(aRetorno : string);
