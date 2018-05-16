@@ -2,17 +2,19 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2018/03/17 23:47:32.000.020,=C:\Users\riani\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2018/03/18 01:06:54.000.875,C:\Users\riani\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\riani\Desktop\consultacnpj\Unit1.dfm</Transaction>
-    <Transaction>2018/03/18 01:06:54.000.875,C:\Users\riani\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\riani\Desktop\consultacnpj\Unit1.pas</Transaction>
-    <Transaction>2018/03/18 01:06:56.000.729,C:\Users\riani\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\riani\Desktop\consultacnpj\Project1.dproj</Transaction>
-    <Transaction>2018/03/18 11:55:50.000.588,C:\Users\riani\Desktop\consultacnpj\Unit1.dfm=C:\Users\riani\Desktop\consultacnpj\uSCConsultaCNPJ.dfm</Transaction>
-    <Transaction>2018/03/18 11:55:50.000.588,C:\Users\riani\Desktop\consultacnpj\Unit1.pas=C:\Users\riani\Desktop\consultacnpj\uSCConsultaCNPJ.pas</Transaction>
+    <Transaction>2018/03/18 01:06:54.000.875,C:\Users\riani\Desktop\consultacnpj\Unit1.pas=C:\Users\riani\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/03/18 01:06:54.000.875,C:\Users\riani\Desktop\consultacnpj\Unit1.dfm=C:\Users\riani\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2018/03/18 01:06:56.000.729,C:\Users\riani\Desktop\consultacnpj\Project1.dproj=C:\Users\riani\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2018/03/18 11:55:50.000.588,C:\Users\riani\Desktop\consultacnpj\uSCConsultaCNPJ.dfm=C:\Users\riani\Desktop\consultacnpj\Unit1.dfm</Transaction>
+    <Transaction>2018/03/18 11:55:50.000.588,C:\Users\riani\Desktop\consultacnpj\uSCConsultaCNPJ.pas=C:\Users\riani\Desktop\consultacnpj\Unit1.pas</Transaction>
     <Transaction>2018/03/18 12:12:02.000.267,=C:\Users\riani\Desktop\consultacnpj\ACBrUtil.pas</Transaction>
     <Transaction>2018/03/18 12:32:41.000.525,=C:\Users\riani\Desktop\consultacnpj\Unit1.pas</Transaction>
-    <Transaction>2018/03/18 12:35:20.000.381,C:\Users\riani\Desktop\consultacnpj\uTesteConsultaCNPJ.pas=C:\Users\riani\Desktop\consultacnpj\Unit1.pas</Transaction>
-    <Transaction>2018/03/18 12:35:20.000.381,C:\Users\riani\Desktop\consultacnpj\uTesteConsultaCNPJ.dfm=C:\Users\riani\Desktop\consultacnpj\Unit1.dfm</Transaction>
-    <Transaction>2018/03/18 12:36:57.000.814,C:\Users\riani\Desktop\consultacnpj\TesteConsultaCNPJ.dproj=C:\Users\riani\Desktop\consultacnpj\Project1.dproj</Transaction>
-    <Transaction>2018/03/18 13:07:30.000.878,C:\Users\riani\Desktop\SCConsultaCNPJ\Teste\TesteConsultaCNPJ2.dproj=C:\Users\riani\Desktop\SCConsultaCNPJ\Teste\TesteConsultaCNPJ.dproj</Transaction>
-    <Transaction>2018/03/18 13:07:33.000.052,C:\Users\riani\Desktop\SCConsultaCNPJ\Teste\TesteConsultaCNPJ.dproj=C:\Users\riani\Desktop\SCConsultaCNPJ\Teste\TesteConsultaCNPJ2.dproj</Transaction>
+    <Transaction>2018/03/18 12:35:20.000.381,C:\Users\riani\Desktop\consultacnpj\Unit1.pas=C:\Users\riani\Desktop\consultacnpj\uTesteConsultaCNPJ.pas</Transaction>
+    <Transaction>2018/03/18 12:35:20.000.381,C:\Users\riani\Desktop\consultacnpj\Unit1.dfm=C:\Users\riani\Desktop\consultacnpj\uTesteConsultaCNPJ.dfm</Transaction>
+    <Transaction>2018/03/18 12:36:57.000.814,C:\Users\riani\Desktop\consultacnpj\Project1.dproj=C:\Users\riani\Desktop\consultacnpj\TesteConsultaCNPJ.dproj</Transaction>
+    <Transaction>2018/03/18 13:07:30.000.878,C:\Users\riani\Desktop\SCConsultaCNPJ\Teste\TesteConsultaCNPJ.dproj=C:\Users\riani\Desktop\SCConsultaCNPJ\Teste\TesteConsultaCNPJ2.dproj</Transaction>
+    <Transaction>2018/03/18 13:07:33.000.052,C:\Users\riani\Desktop\SCConsultaCNPJ\Teste\TesteConsultaCNPJ2.dproj=C:\Users\riani\Desktop\SCConsultaCNPJ\Teste\TesteConsultaCNPJ.dproj</Transaction>
+    <Transaction>2018/05/16 19:45:27.397,D:\wk\ConsultaCNPJ\Teste\TesteConsultaCNPJ2.dproj=D:\wk\ConsultaCNPJ\Teste\TesteConsultaCNPJ.dproj</Transaction>
+    <Transaction>2018/05/16 19:47:49.026,D:\wk\ConsultaCNPJ\Teste\TesteConsultaCNPJ.dproj=D:\wk\ConsultaCNPJ\Teste\TesteConsultaCNPJ2.dproj</Transaction>
   </Transactions>
 </BorlandProject>

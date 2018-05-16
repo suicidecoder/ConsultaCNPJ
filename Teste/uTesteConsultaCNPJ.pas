@@ -49,7 +49,7 @@ type
     Label5: TLabel;
     procedure btnConsultarClick(Sender: TObject);
   private
-    { Private declarations }
+    procedure EscreverChavesRegistro;
   public
     { Public declarations }
   end;
@@ -61,12 +61,14 @@ implementation
 
 {$R *.dfm}
 
-uses uSCConsultaCNPJ;
+uses uSCConsultaCNPJ, Registry;
 
 procedure TFTesteConsultaCNPJ.btnConsultarClick(Sender: TObject);
 var
   lResposta : TFSCConsultaCNPJResposta;
 begin
+  EscreverChavesRegistro;
+
   memo.Lines.Clear;
   lResposta := TFSCConsultaCNPJ.ConsultarCNPJ(edtCNPJ.Text);
 
@@ -92,6 +94,21 @@ begin
   memo.Lines.Add('Email             : '+lResposta.EndEletronico);
   memo.Lines.Add('Telefone          : '+lResposta.Telefone);
   memo.Lines.Add('EFR               : '+lResposta.EFR);
+end;
+
+procedure TFTesteConsultaCNPJ.EscreverChavesRegistro;
+var
+  lReg : TRegistry;
+begin
+  try
+    lReg := TRegistry.Create(KEY_WRITE OR KEY_WOW64_32KEY);
+
+    lReg.RootKey := HKEY_LOCAL_MACHINE;
+    lReg.OpenKey('\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION',True);
+    lReg.WriteInteger( ExtractFileName(Application.ExeName), 11000);
+  finally
+    FreeAndNil(lReg);
+  end;
 end;
 
 end.
